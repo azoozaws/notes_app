@@ -15,8 +15,19 @@ class NotesApp extends StatelessWidget {
         brightness: Brightness.dark,
         fontFamily: "Poppins",
       ),
-      home: const Scaffold(
-        body: NotesView(),
+      home: Scaffold(
+        floatingActionButton: FloatingActionButton(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(
+              34,
+            ),
+          ),
+          child: const Icon(
+            Icons.add,
+          ),
+          onPressed: () {},
+        ),
+        body: const NotesView(),
       ),
     );
   }
