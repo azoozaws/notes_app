@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:notes_app/widgets/custom_Text_Field.dart';
 
 class AddNoteModalBottomSheet extends StatelessWidget {
@@ -7,20 +8,42 @@ class AddNoteModalBottomSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 34),
-      child: const Column(
+      child: Column(
         children: [
-          CustomTextField(
+          const CustomTextField(
             hintText: "Enter the title",
             labelText: "Title",
             sizeOfPadding: 24,
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
-          CustomTextField(
+          const CustomTextField(
             hintText: "Enter the content",
             labelText: "Content",
-            sizeOfPadding: 90,
+            sizeOfPadding: 50,
+          ),
+          const SizedBox(
+            height: 80,
+          ),
+          GestureDetector(
+            onTap: () {},
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.cyanAccent,
+                borderRadius: BorderRadius.circular(8),
+              ),
+              height: 60,
+              child: const Center(
+                child: Text(
+                  "Add",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 24,
+                  ),
+                ),
+              ),
+            ),
           ),
         ],
       ),
