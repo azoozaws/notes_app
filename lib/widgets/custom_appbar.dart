@@ -19,7 +19,6 @@ class CustomAppBar extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(right: 20),
           child: Container(
-            padding: const EdgeInsets.all(4),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(
                 8,
