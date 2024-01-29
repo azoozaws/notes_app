@@ -12,18 +12,17 @@ class AddNoteModalBottomSheet extends StatelessWidget {
           const CustomTextField(
             hintText: "Enter the title",
             labelText: "Title",
-            sizeOfPadding: 24,
           ),
           const SizedBox(
-            height: 20,
+            height: 25,
           ),
           const CustomTextField(
             hintText: "Enter the content",
             labelText: "Content",
-            sizeOfPadding: 50,
+            maxLines: 5,
           ),
           const SizedBox(
-            height: 80,
+            height: 60,
           ),
           GestureDetector(
             onTap: () {},
