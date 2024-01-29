@@ -21,6 +21,7 @@ class HomeView extends StatelessWidget {
         ),
         onPressed: () {
           showModalBottomSheet(
+            backgroundColor: Colors.grey[850],
             context: context,
             builder: (context) {
               return const AddNoteModalBottomSheet();

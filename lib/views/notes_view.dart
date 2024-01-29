@@ -10,7 +10,10 @@ class NotesView extends StatelessWidget {
     return const Scaffold(
       body: Column(
         children: [
-          CustomAppBar(),
+          CustomAppBar(
+            title: "Notes",
+            icon: Icons.search,
+          ),
           Expanded(
             child: ListViewofNotes(),
           ),
