@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/constants.dart';
 
 class CustomTextField extends StatelessWidget {
   const CustomTextField({
@@ -29,7 +30,7 @@ class CustomTextField extends StatelessWidget {
         labelText: labelText,
         labelStyle: const TextStyle(
           fontSize: 24,
-          color: Colors.cyanAccent,
+          color: kPrimarycolor,
         ),
         enabledBorder: OutlineInputBorder(
           borderSide: const BorderSide(
