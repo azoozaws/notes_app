@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/cubits/cubit/add_note_cubit_cubit.dart';
+import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/widgets/custom_Text_Field.dart';
 import 'package:notes_app/widgets/custom_button.dart';
 
@@ -14,7 +16,7 @@ class AddNoteFormState extends StatefulWidget {
 class _AddNoteFormStateState extends State<AddNoteFormState> {
   final GlobalKey<FormState> formKey = GlobalKey();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
-  String? title, subtitle;
+  String? title, subTitle;
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -37,7 +39,7 @@ class _AddNoteFormStateState extends State<AddNoteFormState> {
             labelText: "Content",
             maxLines: 5,
             onSaved: (value) {
-              title = value;
+              subTitle = value;
             },
           ),
           const SizedBox(
@@ -47,6 +49,8 @@ class _AddNoteFormStateState extends State<AddNoteFormState> {
             onTap: () {
               if (formKey.currentState!.validate()) {
                 formKey.currentState!.save();
+
+                addNote(title: title!, subTitle: subTitle!);
               } else {
                 autovalidateMode = AutovalidateMode.always;
                 setState(() {});
@@ -56,5 +60,15 @@ class _AddNoteFormStateState extends State<AddNoteFormState> {
         ],
       ),
     );
+  }
+
+  void addNote({required String title, required String subTitle}) {
+    NoteModel note = NoteModel(
+      title: title,
+      subTitle: subTitle,
+      date: "2003",
+      color: 3489598,
+    );
+    AddNoteCubit().addNote(note);
   }
 }
