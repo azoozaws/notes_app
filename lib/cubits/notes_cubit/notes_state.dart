@@ -10,9 +10,3 @@ final class NotesSuccess extends NotesState {
 }
 
 final class NotesInitial extends NotesState {}
-
-final class NotesFailur extends NotesState {
-  final String errorMessage;
-
-  NotesFailur({required this.errorMessage});
-}
