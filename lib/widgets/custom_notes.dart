@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/views/edit_note_view.dart';
 
@@ -17,7 +18,7 @@ class CustomNotes extends StatelessWidget {
           borderRadius: BorderRadius.circular(
             16,
           ),
-          color: const Color(0xFFFFcc80),
+          color: Color(note.color),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
@@ -49,7 +50,11 @@ class CustomNotes extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(right: 8),
               child: Text(
-                note.date,
+                DateFormat.yMMMd().format(
+                  DateTime.parse(
+                    note.date,
+                  ),
+                ),
                 style: TextStyle(
                   color: Colors.black.withOpacity(0.5),
                 ),
