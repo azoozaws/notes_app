@@ -25,6 +25,9 @@ class _AddNoteFormStateState extends State<AddNoteFormState> {
       autovalidateMode: autovalidateMode,
       child: Column(
         children: [
+          const SizedBox(
+            height: 26,
+          ),
           CustomTextField(
             hintText: "Enter the title",
             labelText: "Title",
@@ -53,7 +56,7 @@ class _AddNoteFormStateState extends State<AddNoteFormState> {
                 onTap: () {
                   if (formKey.currentState!.validate()) {
                     formKey.currentState!.save();
-    
+
                     addNote(title: title!, subTitle: subTitle!);
                   } else {
                     autovalidateMode = AutovalidateMode.always;
@@ -62,6 +65,9 @@ class _AddNoteFormStateState extends State<AddNoteFormState> {
                 },
               );
             },
+          ),
+          const SizedBox(
+            height: 26,
           ),
         ],
       ),
