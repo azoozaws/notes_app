@@ -4,6 +4,7 @@ import 'package:notes_app/cubits/cubit/add_note_cubit_cubit.dart';
 import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/widgets/custom_Text_Field.dart';
 import 'package:notes_app/widgets/custom_button.dart';
+import 'package:notes_app/widgets/custom_list_view_of_circle_avatar.dart';
 
 class AddNoteFormState extends StatefulWidget {
   const AddNoteFormState({
@@ -47,7 +48,14 @@ class _AddNoteFormStateState extends State<AddNoteFormState> {
             },
           ),
           const SizedBox(
-            height: 45,
+            height: 20,
+          ),
+          const SizedBox(
+            height: 28 * 2 + 2,
+            child: CustomListViewOfCircleAvatar(),
+          ),
+          const SizedBox(
+            height: 25,
           ),
           BlocBuilder<AddNoteCubit, AddNoteCubitState>(
             builder: (context, state) {
