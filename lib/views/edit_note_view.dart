@@ -4,6 +4,7 @@ import 'package:notes_app/cubits/notes_cubit/notes_cubit.dart';
 import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/widgets/custom_Text_Field.dart';
 import 'package:notes_app/widgets/custom_appbar.dart';
+import 'package:notes_app/widgets/custom_list_view_of_circle_avatar.dart';
 
 class EditNoteView extends StatefulWidget {
   const EditNoteView({super.key, required this.note});
@@ -29,6 +30,7 @@ class _EditNoteViewState extends State<EditNoteView> {
                 onPressed: () {
                   widget.note.title = title ?? widget.note.title;
                   widget.note.subTitle = subtitle ?? widget.note.subTitle;
+                  widget.note.color = acolor.value;
                   widget.note.save();
                   BlocProvider.of<NotesCubit>(context).fetchAllNotes();
                   Navigator.pop(context);
@@ -53,6 +55,13 @@ class _EditNoteViewState extends State<EditNoteView> {
               hintText: "Enter the new content",
               labelText: widget.note.subTitle,
               maxLines: 5,
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            const SizedBox(
+              height: 28 * 2 + 2,
+              child: CustomListViewOfCircleAvatar(),
             ),
           ],
         ),
