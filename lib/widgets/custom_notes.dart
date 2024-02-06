@@ -12,7 +12,13 @@ class CustomNotes extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Navigator.pushNamed(context, EditNoteView.id),
+      onTap: () => Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => EditNoteView(
+            note: note,
+          ),
+        ),
+      ),
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
         margin: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
