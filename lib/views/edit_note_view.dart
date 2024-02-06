@@ -40,8 +40,8 @@ class _EditNoteViewState extends State<EditNoteView> {
               onChanged: (value) {
                 title = value;
               },
-              hintText: "Enter the title",
-              labelText: "Title",
+              hintText: "Enter the new title",
+              labelText: widget.note.title,
             ),
             const SizedBox(
               height: 25,
@@ -50,8 +50,8 @@ class _EditNoteViewState extends State<EditNoteView> {
               onChanged: (value) {
                 subtitle = value;
               },
-              hintText: "Enter the content",
-              labelText: "Content",
+              hintText: "Enter the new content",
+              labelText: widget.note.subTitle,
               maxLines: 5,
             ),
           ],
